@@ -8,6 +8,14 @@ trigger:
 
 pool:
   vmImage: 'ubuntu-latest'
+  
+resources:
+  repositories:
+  - repository: 'common'
+    type: github
+    name: 'hello-project'
+    ref: 'refs/heads/master'
+    endpoint: 'azureSubscription'
 
 steps:
 - task: Maven@3
@@ -20,11 +28,3 @@ steps:
     publishJUnitResults: false
     testResultsFiles: '**/TEST-*.xml'
     goals: 'package'
-
-resources:
-  repositories:
-  - repository: 'common'
-    type: github
-    name: 'hello-project'
-    ref: 'refs/heads/master'
-    endpoint: 'azureSubscription'
