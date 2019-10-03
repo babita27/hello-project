@@ -20,7 +20,11 @@ steps:
     publishJUnitResults: false
     testResultsFiles: '**/TEST-*.xml'
     goals: 'package'
-- task: GithubRelease@0
-  inputs:
-    gitHubConnection: azureSubscription
 
+resources:
+  repositories:
+  - repository: 'common'
+    type: github
+    name: 'hello-project'
+    ref: 'refs/heads/master'
+    endpoint: 'azureSubscription'
