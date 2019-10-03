@@ -20,6 +20,4 @@ steps:
     publishJUnitResults: false
     testResultsFiles: '**/TEST-*.xml'
     goals: 'package'
-- task: AzureRmWebAppDeployment@3
-  inputs:
-    azureSubscription: 'azureSubscription'
+
