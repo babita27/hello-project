@@ -9,13 +9,11 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
   
-resources:
-  repositories:
-  - repository: template
-    type: github
-    name: 'hello-project'
-    ref: 'refs/heads/master'
-    endpoint: 'https://github.com/babita27/hello-project'
+variables:
+  # the name of the service connection that you created above
+  serviceConnectionToAzure: 'azureSubscription'
+  # the name of your web app here is the same one you used above
+  # when you created the web app using the Azure CL
     
 steps:
 - task: Maven@3
