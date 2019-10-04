@@ -9,6 +9,14 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
   
+resources:
+  repositories:
+  - repository: template
+    type: github
+    name: 'hello-project'
+    ref: 'refs/heads/master'
+    endpoint: 'https://github.com/babita27/hello-project'
+    
 steps:
 - task: Maven@3
   inputs:
