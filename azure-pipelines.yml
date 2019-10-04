@@ -21,7 +21,7 @@ resources:
     type: github	  # the name of your web app here is the same one you used above
     name: 'hello-project'	  # when you created the web app using the Azure CL
     ref: 'refs/heads/master'	
-    endpoint: 'https://github.com/babita27/hello-project'
+    endpoint: serviceConnectionToAzure
     
 steps:
 - task: Maven@3
